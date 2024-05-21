@@ -1,0 +1,12 @@
+name: first-workflow
+on: push
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: any code changes run workflow
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        uses: npm ci
+      - name: Run tests
+        uses: npm test
