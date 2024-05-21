@@ -1,11 +1,26 @@
 name: first-workflow
 on: push
 jobs:
-  first-job:
+  first-workflow:
     runs-on: ubuntu-latest
     steps:
-      - name: any code changes run workflow
+      - name: checkout code
         uses: actions/checkout@v3
+      -name: Install NodeJS
+        uses: actions/setup-node@v3
+      -name: Run tests
+        run: npm test
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+      - name: Build project
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploying.."
   
         
       
