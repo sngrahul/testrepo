@@ -12,7 +12,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: first artifact
-          path: main
+          path: $ {{ github.workspace }}/artifacts
   Deploy:
     needs: first-job
     runs-on: ubuntu-latest
