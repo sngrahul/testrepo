@@ -16,7 +16,11 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 20          
+          node-version: 20
+      - name: Run
+        run: npm ci
+      - name: test
+        run: npm test      
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
