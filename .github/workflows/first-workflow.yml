@@ -12,7 +12,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: first artifact
-          path: artifactpath
+          path: main
   Deploy:
     needs: first-job
     runs-on: ubuntu-latest
@@ -21,6 +21,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Install NodeJS
         uses: actions/setup-node@v3
+      - name: download artifacts
+        uses: actions/download-artifacts@v3
+        with:
+          name: first artifact
+          path: main
       - name: Build project
         run: echo "Build project"
       - name: Deploy
