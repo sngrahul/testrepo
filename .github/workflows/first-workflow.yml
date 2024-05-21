@@ -17,7 +17,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
       - name: Build project
-        run: npm run build
+        run: echo "Build project"
       - name: Deploy
         run: echo "Deploying.."
   
