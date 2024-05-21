@@ -1,5 +1,6 @@
 name: first-workflow
 on: push
+  branches: main
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -12,7 +13,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: first artifact
-          path: $ {{ github.workspace }}/artifacts
+          path: main
   Deploy:
     needs: first-job
     runs-on: ubuntu-latest
