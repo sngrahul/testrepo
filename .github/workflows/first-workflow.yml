@@ -7,6 +7,6 @@ jobs:
       - name: any code changes run workflow
         uses: actions/checkout@v3
       - name: Install dependencies
-        uses: npm ci
+        run: npm ci
       - name: Run tests
-        uses: npm test
+        run: npm test
