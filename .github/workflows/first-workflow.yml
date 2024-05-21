@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '20.x'
       - name: install dependencies
-        run: npm init
+        run: npm init @sngrahul/testrepo
       - name: Run
         run: npm ci
       - name: build
