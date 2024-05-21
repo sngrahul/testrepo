@@ -16,7 +16,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-        node-version: 20          
+          node-version: 20          
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
