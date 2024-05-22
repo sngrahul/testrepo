@@ -19,12 +19,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       
-      - run: mvn --batch-mode --update-snapshots verify
-      - run: mvn staging && cp target/.*jar staging
+      - run: ant -noinput -buildfile build.xml
       - uses: actions/upload-artifact@v4
         with:
           name: package
-          path: staging
+          path: build/jar
          
   
   Deploy:
