@@ -1,1 +1,6 @@
-echo " first build file"
+<?xml version="1.0"?>
+<project name="the project" default="compile" basedir=".">
+
+	<property name="src.dir" location="src" />
+	<property name="bin.dir" location="bin" />
+	<property name="lib.dir" location="lib" />
