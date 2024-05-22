@@ -1,6 +1,18 @@
-<?xml version="1.0"?>
-<project name="the project" default="compile" basedir=".">
+<?xml version="1.0" encoding="UTF-8"?>
 
-	<property name="src.dir" location="src" />
-	<property name="bin.dir" location="bin" />
-	<property name="lib.dir" location="lib" />
+<project name="buildingAllProjects" basedir="." default="buildProjects">
+
+
+    <target name="Testapp">
+        <ant dir="Testapp" target="clean"/>
+        <ant dir="Testapp" target="compile" />
+    </target>
+
+    <target name="StringsPermutation">
+        <ant dir="StringsPermutation" target="clean" />
+        <ant dir="StringsPermutation" target="compile"/>
+    </target>
+
+    <target name="buildProjects" depends="Testapp, StringsPermutation" />
+
+</project>
