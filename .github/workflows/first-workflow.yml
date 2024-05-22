@@ -13,23 +13,17 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v4
-      - name: Install NodeJS
-        uses: actions/setup-node@v4
+      - name: Install java
+        uses: actions/setup-java@v4
         with:
-          node-version: '20.x'
-      - name: install dependencies
-        run: npm init @sngrahul/https://github.com/sngrahul/testrepo
-      - name: Run
-        run: npm ci
-      - name: build
-        run: npm run build --if-present
-      - name: test
-        run: npm test      
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+          java-version: '17'
+          distribution: 'temurin'
+      - run: ant -noinput -buildfile build.xml
+      - uses: actions/upload-artifact@v4
         with:
-          name: first artifact
-          path: main
+           name: package
+           path: build/jar
+    
   Deploy:
     needs: first-job
     runs-on: ubuntu-latest
