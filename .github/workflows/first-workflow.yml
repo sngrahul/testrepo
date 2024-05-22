@@ -13,16 +13,16 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v4
-      - name: Install java
-        uses: actions/setup-java@v4
+      - name: setup dotnet
+        uses: actions/setup-dotnet@v3
         with:
-          java-version: '17'
-          distribution: 'temurin'
-      - run: ant -noinput -buildfile /home/runner/.m2/settings.xml
-      - uses: actions/upload-artifact@v4
-        with:
-           name: package
-           path: build/jar
+          dotnet-version: '6.0.x'
+      - name: install dependencies
+        run: dotnet restore
+      - name: build
+        run: dotnet build
+      - name: test with dotnet cli
+        run: dotnet test
     
   Deploy:
     needs: first-job
