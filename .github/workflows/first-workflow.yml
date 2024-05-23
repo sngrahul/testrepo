@@ -27,8 +27,7 @@ jobs:
               "data_2": true
               }' >> testartifact.json
   test:
-    runs-on: ubuntu-latest
-    steps:
+    needs: build
       - name: Test the build
         id: vars
         run: echo  "version=$(cat testartifact.json)" >> $GITHUB_OUTPUT
@@ -40,7 +39,7 @@ jobs:
           
   
   Deploy:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
