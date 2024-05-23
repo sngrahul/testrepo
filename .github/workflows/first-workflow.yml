@@ -20,6 +20,17 @@ jobs:
           distribution: 'temurin'
       - name: composite action
         uses: ./.github/workflows
+      - name: create data
+        run: |
+            printf '{
+              "data_1": "Text data",
+              "data_2": true
+              }' >> data.json
+      - uses: actions/upload-artifact@v3
+        with:
+          name: data.json
+          path: ./
+
           
   
   Deploy:
