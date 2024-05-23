@@ -26,6 +26,12 @@ jobs:
               "data_1": "Text data",
               "data_2": true
               }' >> testartifact.json
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the build
+        id: vars
+        run: echo  "version=$(cat testartifact.json)" >> $GITHUB_OUTPUT
       - uses: actions/upload-artifact@v3
         with:
           name: testartifact.json
