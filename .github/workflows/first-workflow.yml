@@ -8,7 +8,7 @@ on:
             - main
             
 jobs:
-  first-job:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
@@ -28,13 +28,13 @@ jobs:
               }' >> data.json
       - uses: actions/upload-artifact@v3
         with:
-          name: data.json
+          name: testartifact.json
           path: ./
 
           
   
   Deploy:
-    needs: first-job
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
@@ -44,7 +44,7 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: data.json
+          name: testartifact.json
           path: main
       - name: Build project
         run: echo "Build project"
