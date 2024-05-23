@@ -27,7 +27,7 @@ jobs:
               "data_2": true
               }' >> testartifact.json
   test:
-    needs: build
+     needs: build
       - name: Test the build
         id: vars
         run: echo  "version=$(cat testartifact.json)" >> $GITHUB_OUTPUT
