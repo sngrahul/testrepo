@@ -28,6 +28,7 @@ jobs:
               }' >> testartifact.json
   test:
     needs: build
+    runs-on: ubuntu-latest
     steps:
         
       - name: upload artifacts
