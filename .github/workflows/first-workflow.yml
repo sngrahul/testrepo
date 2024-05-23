@@ -18,8 +18,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: composite action
-        uses: ./.github/workflows
+      ##- name: composite action
+        ##uses: ./.github/workflows
       - name: create data
         run: |
             printf '{
