@@ -44,7 +44,7 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v3
         with:
-          name: first artifact
+          name: data.json
           path: main
       - name: Build project
         run: echo "Build project"
