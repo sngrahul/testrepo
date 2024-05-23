@@ -28,7 +28,10 @@ jobs:
               }' >> testartifact.json
   test:
     needs: build
-      - uses: actions/upload-artifact@v3
+    steps:
+        
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
         with:
           name: testartifact.json
           path: ./
