@@ -47,6 +47,7 @@ jobs:
   Deploy:
     needs: test
     runs-on: ubuntu-latest
+    environment: development 
     steps:
       - name: checkout code
         uses: actions/checkout@v3
