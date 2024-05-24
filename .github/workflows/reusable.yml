@@ -2,8 +2,8 @@ name: Resuable Deploy workflow
 on: workflow_call
 jobs:
   deploy:
-  runs-on: ubuntu-latest
-  steps: 
-    - name: Using reusable workflow deploy
-      run: echo "Deploy using reusable workflow"
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Using reusable workflow deploy
+        run: echo "Deploy using reusable workflow"
 
