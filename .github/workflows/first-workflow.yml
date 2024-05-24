@@ -65,11 +65,12 @@ jobs:
         
   Deploytestenv:
     needs: Deploy
-    runs-on: ubuntu-latest
-    environment: testing-env
-    steps:
-      - name: deploy to test env
-        run: echo " deployed to test environment"
+    uses: ./.github/workflows/resusable.yml
+    ##runs-on: ubuntu-latest
+    ##environment: testing-env
+    ##steps:
+      ##- name: deploy to test env
+        ##run: echo " deployed to test environment"
         
 
   
