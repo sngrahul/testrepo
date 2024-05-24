@@ -62,6 +62,17 @@ jobs:
         run: echo "Build project"
       - name: Deploy
         run: echo "Deploying.."
+        
+  Deploytestenv:
+    needs: Deploy
+    runs-on: ubuntu-latest
+    environment: testing-env
+    steps:
+      - name: deploy to test env
+        run: echo " deployed to test environment"
+        
+
   
+   
         
       
