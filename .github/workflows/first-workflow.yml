@@ -35,20 +35,14 @@ jobs:
         with:
           name: testartifact.json
           path: ./
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test the build
-        run: |
-            ls ${{ github.workspace }}
+
               
               
       
        
  #Download artifact 
   Deploy:
-    needs: test
+    needs: build
     runs-on: ubuntu-latest
     environment: development 
     steps:
@@ -65,6 +59,14 @@ jobs:
         run: echo "Build project"
       - name: Deploy
         run: echo "Deploying.."
+  test:
+    needs: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the build
+        run: |
+            ls ${{ github.workspace }}
+      
   #Reusable workflow      
   Deploytestenv:
     needs: Deploy
