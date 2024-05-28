@@ -1,3 +1,4 @@
+#Trigger workflow
 name: first-workflow
 on: 
       push:
@@ -6,7 +7,7 @@ on:
       pull_request:
             branches:
             - main
-            
+#CI/CD with upload artifact            
 jobs:
   build:
     strategy:
@@ -43,7 +44,7 @@ jobs:
         run: echo  "version=$(cat testartifact)" >> $GITHUB_OUTPUT
 
           
-  
+ #Download artifact 
   Deploy:
     needs: test
     runs-on: ubuntu-latest
