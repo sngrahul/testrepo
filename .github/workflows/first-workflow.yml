@@ -71,8 +71,7 @@ jobs:
         run: |
           echo "${{fromJson(steps.set_value.outputs.testartifactjson).version}}"
           
-          
-            
+                    
       
   #Reusable workflow      
   Deploytestenv:
