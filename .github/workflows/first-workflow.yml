@@ -34,7 +34,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: testartifact.json
-          path: /home/runner/work/testrepo/testrepo/main
+          path: ./
 
               
               
@@ -64,8 +64,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test the build
+      - id: read_value
         run: |
-            ls ${{ github.workspace }}
+          content='cat /home/runner/work/testrepo/testrepo/main/testartifact.json'
+          echo "::set-output name=testartifactjson::$content"
+        run: |
+          echo "${{fromJson(steps.set_value.outputs.testartifactjson).version}}"
+          
+          
+            
       
   #Reusable workflow      
   Deploytestenv:
