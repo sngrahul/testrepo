@@ -40,10 +40,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test the build
-        id: vars
-        run: echo  "vars=$(cat /home/runner/work/testrepo/testrepo/main/testartifact.json)"
-
-          
+        run: |
+            ls ${{ github.workspace }}
+              
+              
+      
+       
  #Download artifact 
   Deploy:
     needs: test
