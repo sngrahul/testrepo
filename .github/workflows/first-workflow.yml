@@ -65,7 +65,7 @@ jobs:
     steps:
       - name: Test the build
       - id: read
-        uses: sngrahul/github-action-read-file@main
+      - uses: sngrahul/github-action-read-file@main
         with:
           path: /home/runner/work/testrepo/testrepo/main/testartifact.json
       - name: Echo jsonfile
