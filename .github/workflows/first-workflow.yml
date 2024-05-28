@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: Test the build
         id: vars
-        run: echo  "version=$(cat /home/runner/work/testrepo/testrepo/main/testartifact.json)" >> $GITHUB_OUTPUT
+        run: echo  "vars=$(cat /home/runner/work/testrepo/testrepo/main/testartifact.json)"
 
           
  #Download artifact 
