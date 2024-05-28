@@ -34,7 +34,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: testartifact.json
-          path: ${{ github.workspace }}
+          path: ./home/runner/work/testrepo/testrepo/main/
 
               
               
