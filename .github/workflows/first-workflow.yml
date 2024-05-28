@@ -64,12 +64,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test the build
-      - id: read_value
-        #uses: sngrahul/github-action-read-file@main
+      - id: read
+        uses: sngrahul/github-action-read-file@main
         with:
           path: /home/runner/work/testrepo/testrepo/main/testartifact.json
       - name: Echo jsonfile
-        run: echo "${{ steps.package.outputs.content }}"
+        run: echo "${{ steps.read.outputs.content }}"
           
                     
       
