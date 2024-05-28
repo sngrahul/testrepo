@@ -65,7 +65,7 @@ jobs:
     steps:
       - name: Test the build
       - id: read_value
-      -  run: |
+        run: |
           content='cat /home/runner/work/testrepo/testrepo/main/testartifact.json'
           echo "::set-output name=testartifactjson::$content"
       -  run: |
