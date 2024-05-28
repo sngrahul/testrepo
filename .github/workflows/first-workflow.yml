@@ -31,7 +31,7 @@ jobs:
               "data_1": "Text data",
               "data_2": true
               }' >> testartifact.json
-        uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
           name: testartifact.json
           path: ./
@@ -65,7 +65,7 @@ jobs:
     steps:
       - name: Test the build
       - id: read_value
-        uses: sngrahul/github-action-read-file@main
+        #uses: sngrahul/github-action-read-file@main
         with:
           path: /home/runner/work/testrepo/testrepo/main/testartifact.json
       - name: Echo jsonfile
