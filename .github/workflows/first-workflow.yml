@@ -65,11 +65,11 @@ jobs:
     steps:
       - name: Test the build
       - id: read_value
-        run: |
-          content='cat /home/runner/work/testrepo/testrepo/main/testartifact.json'
-          echo "::set-output name=testartifactjson::$content"
-      -  run: |
-          echo "${{fromJson(steps.set_value.outputs.testartifactjson).version}}"
+        uses: sngrahul/github-action-read-file@main
+        with:
+          path: /home/runner/work/testrepo/testrepo/main/testartifact.json
+      - name: Echo jsonfile
+        run: echo "${{ steps.package.outputs.content }}"
           
                     
       
